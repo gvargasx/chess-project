@@ -1,0 +1,13 @@
+
+Q
+java:S1066^"/Merge this if statement with the enclosing one.(ª›Ô†øÿÿÿÿ8‚…š²ä0
+R
+java:S1066±"/Merge this if statement with the enclosing one.(Ç–ˆôüÿÿÿÿ8ƒ…š²ä0
+R
+java:S1066á"/Merge this if statement with the enclosing one.(¹Ùƒèùÿÿÿÿ8ƒ…š²ä0
+J
+java:S1125d"(Remove the unnecessary boolean literals.(ğîÄøÿÿÿÿ8…‹š²ä0
+ƒ
+java:S2178|"fCorrect this "&" to "&&" and extract the right operand to a variable if it should always be evaluated.(ğì—Ä8‹š²ä0
+p
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Üé¢à8¬‹š²ä0

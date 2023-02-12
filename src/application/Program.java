@@ -49,11 +49,7 @@ public class Program {
                     chessMatch.replacePromotedPiece(type);
                 }
             }
-            catch (ChessException e) {
-                System.out.println(e.getMessage());
-                sc.nextLine();
-            }
-            catch (InputMismatchException e) {
+            catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
