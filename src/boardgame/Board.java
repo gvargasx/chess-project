@@ -2,9 +2,10 @@ package boardgame;
 
 public class Board {
 
-    private int rows;
-    private int columns;
-    private Piece[][] pieces;
+    public static final String POSITION_NOT_ON_THE_BOARD = "Position not on the board";
+    private final int rows;
+    private final int columns;
+    private final Piece[][] pieces;
 
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1) {
@@ -25,31 +26,31 @@ public class Board {
 
     public Piece piece(int row, int column) {
         if (!positionExists(row, column)) {
-            throw new BoardException("Position not on the board");
+            throw new BoardException(POSITION_NOT_ON_THE_BOARD);
         }
         return pieces[row][column];
     }
 
     public Piece piece(Position position) {
         if (!positionExists(position)) {
-            throw new BoardException("Position not on the board");
+            throw new BoardException(POSITION_NOT_ON_THE_BOARD);
         }
         return pieces[position.getRow()][position.getColumn()];
     }
 
     public void placePiece(Piece piece, Position position) {
         if (thereIsAPiece(position)) {
-            throw new BoardException("There is already a piece on position" + position);
+            throw new BoardException("There is already a piece on position " + position);
         }
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
     }
 
     public Piece removePiece(Position position) {
-        if(!positionExists(position)){
-            throw new BoardException("Position not on the board");
+        if (!positionExists(position)) {
+            throw new BoardException(POSITION_NOT_ON_THE_BOARD);
         }
-        if(piece(position) == null) {
+        if (piece(position) == null) {
             return null;
         }
         Piece aux = piece(position);
@@ -68,7 +69,7 @@ public class Board {
 
     public boolean thereIsAPiece(Position position) {
         if (!positionExists(position)) {
-            throw new BoardException("Position not on the board");
+            throw new BoardException(POSITION_NOT_ON_THE_BOARD);
         }
         return piece(position) != null;
     }
